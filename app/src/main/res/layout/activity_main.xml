@@ -40,7 +40,14 @@ tools:context=".MainActivity" >
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/empty_dice" />
+        android:src="@drawable/empty_dice"
+        tools:src="@drawable/dice_1" />
+    <!--  The tools namespace is used  to define a
+        placeholder content that is only used in
+        the preview or the design editor in Android
+        Studio. Attributes using the tools
+        namespace are removed when you compile the app.
+        -->
     
     <Button
         android:id="@+id/roll_button"
