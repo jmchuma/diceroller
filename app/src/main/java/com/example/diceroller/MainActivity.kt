@@ -7,24 +7,35 @@ import android.widget.ImageView
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    /* We could do
+       var diceImage : ImageView? = null
+       but that would mean having to check for null every time the
+       field is accessed. Since we can guarantee that these fields
+       won't be used before onCreate is called, we can use lateinit
+       instead.
+       Made it private because AndroidStudio said I could
+    */
+    lateinit private var resultText: TextView
+    lateinit private var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button = findViewById(R.id.roll_button)
-        rollButton.setOnClickListener(){rollDice()}
+        resultText = findViewById(R.id.result_text)
+        diceImage = findViewById(R.id.dice_image)
 
-        //val rollButton: Button =
+        //val rollButton: Button = findViewById(R.id.roll_button)
+        //rollButton.setOnClickListener(){rollDice()}
+        findViewById<Button>(R.id.roll_button).setOnClickListener(){rollDice()}
         findViewById<Button>(R.id.countup_button).setOnClickListener(){countUp()}
     }
 
     private fun rollDice() {
         //Toast.makeText(this, "Button clicked", Toast.LENGTH_LONG).show()
-        val resultText: TextView = findViewById(R.id.result_text)
         val diceValue = (1..6).random()
         resultText.text = diceValue.toString()
-
-        val diceImage: ImageView = findViewById(R.id.dice_image)
 
         when(diceValue) {
             1 -> diceImage.setImageResource(R.drawable.dice_1)
@@ -37,9 +48,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun countUp() {
-        val diceImage: ImageView = findViewById(R.id.dice_image)
-        val resultText: TextView = findViewById(R.id.result_text)
-
         when(resultText.text.toString()) {
             "Hello World!" -> {
                 resultText.text = "1"
