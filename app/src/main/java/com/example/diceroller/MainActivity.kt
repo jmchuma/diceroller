@@ -15,42 +15,40 @@ class MainActivity : AppCompatActivity() {
        instead.
        Made it private because AndroidStudio said I could
     */
-    lateinit private var diceImage1: ImageView
-    lateinit private var diceImage2: ImageView
+    private lateinit var diceImage1: ImageView
+    private lateinit var diceImage2: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         diceImage1 = findViewById(R.id.dice_image1)
-        diceImage1.setTag(0)
+        diceImage1.tag = 0
 
         diceImage2 = findViewById(R.id.dice_image2)
-        diceImage2.setTag(0)
+        diceImage2.tag = 0
 
-        findViewById<Button>(R.id.roll_button).setOnClickListener(){rollDice()}
-        findViewById<Button>(R.id.countup_button).setOnClickListener(){countUp()}
+        findViewById<Button>(R.id.roll_button).setOnClickListener {rollDice()}
+        findViewById<Button>(R.id.countup_button).setOnClickListener {countUp()}
     }
 
     private fun rollDice() {
         var drawableID = getDrawableDice()
         diceImage1.setImageResource(drawableID)
-        diceImage1.setTag(drawableID)
+        diceImage1.tag = drawableID
 
         drawableID = getDrawableDice()
         diceImage2.setImageResource(drawableID)
-        diceImage2.setTag(drawableID)
+        diceImage2.tag = drawableID
     }
 
-    private fun getDrawableDice(): Int {
-        return when((1..6).random()) {
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
+    private fun getDrawableDice(): Int = when((1..6).random()) {
+        1 -> R.drawable.dice_1
+        2 -> R.drawable.dice_2
+        3 -> R.drawable.dice_3
+        4 -> R.drawable.dice_4
+        5 -> R.drawable.dice_5
+        else -> R.drawable.dice_6
     }
 
     private fun countUp() {
@@ -58,33 +56,31 @@ class MainActivity : AppCompatActivity() {
         setDice(diceImage2)
     }
 
-    private fun setDice(dice : ImageView) {
-        when(dice.tag) {
-            0 -> {
-                dice.tag = R.drawable.dice_1
-                dice.setImageResource(R.drawable.dice_1)
-            }
-            R.drawable.dice_1 -> {
-                dice.tag = R.drawable.dice_2
-                dice.setImageResource(R.drawable.dice_2)
-            }
-            R.drawable.dice_2 -> {
-                dice.tag = R.drawable.dice_3
-                dice.setImageResource(R.drawable.dice_3)
-            }
-            R.drawable.dice_3 -> {
-                dice.tag = R.drawable.dice_4
-                dice.setImageResource(R.drawable.dice_4)
-            }
-            R.drawable.dice_4 -> {
-                dice.tag = R.drawable.dice_5
-                dice.setImageResource(R.drawable.dice_5)
-            }
-            R.drawable.dice_5 -> {
-                dice.tag = R.drawable.dice_6
-                dice.setImageResource(R.drawable.dice_6)
-            }
-            else -> {}
+    private fun setDice(dice : ImageView) = when(dice.tag) {
+        0 -> {
+            dice.tag = R.drawable.dice_1
+            dice.setImageResource(R.drawable.dice_1)
         }
+        R.drawable.dice_1 -> {
+            dice.tag = R.drawable.dice_2
+            dice.setImageResource(R.drawable.dice_2)
+        }
+        R.drawable.dice_2 -> {
+            dice.tag = R.drawable.dice_3
+            dice.setImageResource(R.drawable.dice_3)
+        }
+        R.drawable.dice_3 -> {
+            dice.tag = R.drawable.dice_4
+            dice.setImageResource(R.drawable.dice_4)
+        }
+        R.drawable.dice_4 -> {
+            dice.tag = R.drawable.dice_5
+            dice.setImageResource(R.drawable.dice_5)
+        }
+        R.drawable.dice_5 -> {
+            dice.tag = R.drawable.dice_6
+            dice.setImageResource(R.drawable.dice_6)
+        }
+        else -> {}
     }
 }
