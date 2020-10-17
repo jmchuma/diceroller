@@ -10,8 +10,8 @@ android {
         applicationId "com.example.diceroller"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 201017004
-        versionName "3.0"
+        versionCode 201017005
+        versionName "3.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
