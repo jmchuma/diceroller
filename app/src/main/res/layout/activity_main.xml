@@ -46,7 +46,7 @@ tools:context=".MainActivity" >
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/empty_dice"
         tools:src="@drawable/dice_1"
-        android:contentDescription="First dice image"
+        android:contentDescription="@string/image1_description"
         />
     <!--  The tools namespace is used  to define a
         placeholder content that is only used in
@@ -62,7 +62,7 @@ tools:context=".MainActivity" >
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/empty_dice"
         tools:src="@drawable/dice_1"
-        android:contentDescription="Second dice image"
+        android:contentDescription="@string/image2_description"
         />
 
     <Button
@@ -82,6 +82,15 @@ tools:context=".MainActivity" >
         android:text="@string/countup_label"
         style="?android:attr/buttonBarButtonStyle"
         />
+
+    <Button
+        android:id="@+id/countdown_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/countdown_label"
+        style="?android:attr/buttonBarButtonStyle"
+    />
 
         </LinearLayout>
     </ScrollView>

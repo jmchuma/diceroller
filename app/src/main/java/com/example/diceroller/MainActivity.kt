@@ -23,13 +23,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         diceImage1 = findViewById(R.id.dice_image1)
-        diceImage1.tag = 0
+        diceImage1.tag = R.drawable.empty_dice
 
         diceImage2 = findViewById(R.id.dice_image2)
-        diceImage2.tag = 0
+        diceImage2.tag = R.drawable.empty_dice
 
         findViewById<Button>(R.id.roll_button).setOnClickListener {rollDice()}
         findViewById<Button>(R.id.countup_button).setOnClickListener {countUp()}
+        findViewById<Button>(R.id.countdown_button).setOnClickListener {countDown()}
     }
 
     private fun rollDice() {
@@ -52,12 +53,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun countUp() {
-        setDice(diceImage1)
-        setDice(diceImage2)
+        setDiceUp(diceImage1)
+        setDiceUp(diceImage2)
     }
 
-    private fun setDice(dice : ImageView) = when(dice.tag) {
-        0 -> {
+    private fun setDiceUp(dice : ImageView) = when(dice.tag) {
+        R.drawable.empty_dice -> {
             dice.tag = R.drawable.dice_1
             dice.setImageResource(R.drawable.dice_1)
         }
@@ -80,6 +81,39 @@ class MainActivity : AppCompatActivity() {
         R.drawable.dice_5 -> {
             dice.tag = R.drawable.dice_6
             dice.setImageResource(R.drawable.dice_6)
+        }
+        else -> {}
+    }
+
+    private fun countDown() {
+        setDiceDown(diceImage1)
+        setDiceDown(diceImage2)
+    }
+
+    private fun setDiceDown(dice: ImageView) = when(dice.tag) {
+        R.drawable.dice_1 -> {
+            dice.tag = R.drawable.empty_dice
+            dice.setImageResource(R.drawable.empty_dice)
+        }
+        R.drawable.dice_2 -> {
+            dice.tag = R.drawable.dice_1
+            dice.setImageResource(R.drawable.dice_1)
+        }
+        R.drawable.dice_3 -> {
+            dice.tag = R.drawable.dice_2
+            dice.setImageResource(R.drawable.dice_2)
+        }
+        R.drawable.dice_4 -> {
+            dice.tag = R.drawable.dice_3
+            dice.setImageResource(R.drawable.dice_3)
+        }
+        R.drawable.dice_5 -> {
+            dice.tag = R.drawable.dice_4
+            dice.setImageResource(R.drawable.dice_4)
+        }
+        R.drawable.dice_6 -> {
+            dice.tag = R.drawable.dice_5
+            dice.setImageResource(R.drawable.dice_5)
         }
         else -> {}
     }

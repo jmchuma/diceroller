@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">DiceRoller</string>
-    <string name="roll_label">Roll</string>
+    <string name="countdown_label">Count down</string>
     <string name="countup_label">Count up</string>
+    <string name="image1_description">First dice image</string>
+    <string name="image2_description">Second dice image</string>
+    <string name="roll_label">Roll</string>
 </resources>
