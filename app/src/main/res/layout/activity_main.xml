@@ -66,6 +66,15 @@ tools:context=".MainActivity" >
         />
 
     <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/reset_label"
+        style="?android:attr/buttonBarButtonStyle"
+        />
+
+    <Button
         android:id="@+id/roll_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

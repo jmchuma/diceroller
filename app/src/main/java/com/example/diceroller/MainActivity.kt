@@ -31,6 +31,15 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.roll_button).setOnClickListener {rollDice()}
         findViewById<Button>(R.id.countup_button).setOnClickListener {countUp()}
         findViewById<Button>(R.id.countdown_button).setOnClickListener {countDown()}
+        findViewById<Button>(R.id.reset_button).setOnClickListener {reset()}
+    }
+
+    private fun reset() {
+        diceImage1.setImageResource(R.drawable.empty_dice)
+        diceImage1.tag = R.drawable.empty_dice
+
+        diceImage2.setImageResource(R.drawable.empty_dice)
+        diceImage2.tag = R.drawable.empty_dice
     }
 
     private fun rollDice() {

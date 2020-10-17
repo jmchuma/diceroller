@@ -4,5 +4,6 @@
     <string name="countup_label">Count up</string>
     <string name="image1_description">First dice image</string>
     <string name="image2_description">Second dice image</string>
+    <string name="reset_label">Reset</string>
     <string name="roll_label">Roll</string>
 </resources>
