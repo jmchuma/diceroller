@@ -52,7 +52,6 @@ tools:context=".MainActivity" >
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        style="?android:attr/buttonBarStyle"
     >
     <Button
         android:id="@+id/reset_button"
@@ -60,7 +59,6 @@ tools:context=".MainActivity" >
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/reset_label"
-        style="?android:attr/buttonBarButtonStyle"
         />
 
     <Button
@@ -69,16 +67,22 @@ tools:context=".MainActivity" >
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/roll_label"
-        style="?android:attr/buttonBarButtonStyle"
         />
+    </LinearLayout>
 
+
+    <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            >
     <Button
         android:id="@+id/countup_button"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/countup_label"
-        style="?android:attr/buttonBarButtonStyle"
         />
 
     <Button
@@ -87,7 +91,6 @@ tools:context=".MainActivity" >
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/countdown_label"
-        style="?android:attr/buttonBarButtonStyle"
     />
     </LinearLayout>
 
