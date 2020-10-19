@@ -35,6 +35,8 @@ tools:context=".MainActivity" >
         app:srcCompat="@drawable/empty_dice"
         tools:src="@drawable/dice_1"
         android:contentDescription="@string/image1_description"
+        android:scaleType="centerInside"
+        android:layout_weight="1"
         />
     <!--  The tools namespace is used  to define a
         placeholder content that is only used in
@@ -51,6 +53,8 @@ tools:context=".MainActivity" >
         app:srcCompat="@drawable/empty_dice"
         tools:src="@drawable/dice_1"
         android:contentDescription="@string/image2_description"
+        android:scaleType="centerInside"
+        android:layout_weight="1"
         />
     </LinearLayout>
 

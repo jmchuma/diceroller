@@ -10,7 +10,7 @@ android {
         applicationId "com.example.diceroller"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 201017100
+        versionCode 201019101
         versionName "3.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
