@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<LinearLayout
+<RelativeLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
-android:layout_gravity="center_vertical"
+android:layout_gravity="center|center_horizontal"
 android:orientation="vertical"
 tools:context=".MainActivity" >
 
@@ -14,7 +14,7 @@ tools:context=".MainActivity" >
         android:id="@+id/dice_image1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/empty_dice"
         tools:src="@drawable/dice_1"
         android:contentDescription="@string/image1_description"
@@ -30,7 +30,8 @@ tools:context=".MainActivity" >
         android:id="@+id/dice_image2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_toRightOf="@id/dice_image1"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/empty_dice"
         tools:src="@drawable/dice_1"
         android:contentDescription="@string/image2_description"
@@ -40,7 +41,7 @@ tools:context=".MainActivity" >
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/dice_image1"
         android:text="@string/reset_label"
         style="?android:attr/buttonBarButtonStyle"
         />
@@ -49,7 +50,8 @@ tools:context=".MainActivity" >
         android:id="@+id/roll_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_toRightOf="@id/reset_button"
+        android:layout_below="@id/dice_image2"
         android:text="@string/roll_label"
         style="?android:attr/buttonBarButtonStyle"
         />
@@ -58,7 +60,7 @@ tools:context=".MainActivity" >
         android:id="@+id/countup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/reset_button"
         android:text="@string/countup_label"
         style="?android:attr/buttonBarButtonStyle"
         />
@@ -67,9 +69,10 @@ tools:context=".MainActivity" >
         android:id="@+id/countdown_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_toRightOf="@id/countup_button"
+        android:layout_below="@id/roll_button"
         android:text="@string/countdown_label"
         style="?android:attr/buttonBarButtonStyle"
     />
 
-</LinearLayout>
+</RelativeLayout>
